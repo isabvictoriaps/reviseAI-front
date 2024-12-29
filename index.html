@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revise.AI - Gerador de Flashcards</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="generator">
+        <img src="img/REVISE.AI.png" alt="" />
+        <h2>Gerador de Flashcards Inteligentes</h2>
+        <p>
+          Geração rápida de flashcards com base em vídeos, textos ou documentos.
+        </p>
+
+        <form id="flashcardForm">
+          <div class="form-group">
+            <label for="tipoConteudo">Escolha o Tipo de Conteúdo:</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                name="tipoConteudo"
+                value="video"
+                id="video"
+                checked
+              />
+              <label for="video">Vídeo</label>
+              <input
+                type="radio"
+                name="tipoConteudo"
+                value="texto"
+                id="texto"
+              />
+              <label for="texto">Texto</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="conteudo">URL do vídeo ou Texto:</label>
+            <input
+              type="text"
+              id="conteudo"
+              name="conteudo"
+              class="inputConteudo"
+              min="5"
+              max="10"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="quantidadeFlashcard"
+              >Quantidade de Flashcards (5 a 10):</label
+            >
+            <input
+              type="number"
+              id="quantidadeFlashcard"
+              name="quantidadeFlashcard"
+              class="inputConteudo"
+              min="5"
+              max="10"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nivelDificuldade">Nível de Dificuldade</label>
+            <div class="radio-group">
+              <input
+                type="radio"
+                name="nivelDificuldade"
+                value="basico"
+                id="basico"
+                checked
+              />
+              <label for="basico">Básico</label>
+              <input
+                type="radio"
+                name="nivelDificuldade"
+                value="intermediario"
+                id="intermediario"
+              />
+              <label for="intermediario">Intermediário</label>
+              <input
+                type="radio"
+                name="nivelDificuldade"
+                value="avancado"
+                id="avancado"
+              />
+              <label for="avancado">Avançado</label>
+            </div>
+          </div>
+
+          <button type="submit">GERAR FLASHCARDS</button>
+        </form>
+      </section>
+
+      <div id="popup" class="popup" style="display: none">
+        <div class="popup-content">
+          <p>Gerando Flashcards...</p>
+        </div>
+      </div>
+
+      <div id="flashcardsContainer" class="flashcard-container"></div>
+      <button id="generateNewFlashcards" class="gerar-novos" style="display: none">
+        Gerar Novos Flashcards
+      </button>
+      <div id="loadingMessage" style="display: none">Gerando Flashcards...</div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
